@@ -112,3 +112,42 @@ body {
   height: 100%;
   overflow: auto;
 }
+
+/* PDF 文本層樣式 */
+.text-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: 0.2;
+  line-height: 1.0;
+  user-select: text;
+  pointer-events: auto;
+}
+
+.text-layer > span {
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0% 0%;
+  color: transparent;
+  z-index: 10;
+}
+
+.text-layer ::selection {
+  background: rgba(0, 0, 255, 0.3);
+}
+
+.dark .text-layer ::selection {
+  background: rgba(0, 0, 255, 0.5);
+}
+
+/* 調試模式 - 如果需要查看文本層覆蓋情況，取消下面的註釋 */
+/* 
+.text-layer > span {
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  background: rgba(255, 255, 0, 0.1);
+}
+*/

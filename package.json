@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node copy-pdf-worker.js && next dev",
+    "build": "node copy-pdf-worker.js && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "copy-pdf-worker": "node copy-pdf-worker.js"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "next": "14.1.0",
+    "pdfjs-dist": "^4.10.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
