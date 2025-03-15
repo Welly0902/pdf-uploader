@@ -137,11 +137,11 @@ body {
 }
 
 .text-layer ::selection {
-  background: rgba(0, 0, 255, 0.3);
+  background: rgba(79, 70, 229, 0.4);
 }
 
 .dark .text-layer ::selection {
-  background: rgba(0, 0, 255, 0.5);
+  background: rgba(99, 102, 241, 0.5);
 }
 
 /* 調試模式 - 如果需要查看文本層覆蓋情況，取消下面的註釋 */
@@ -151,3 +151,47 @@ body {
   background: rgba(255, 255, 0, 0.1);
 }
 */
+
+/* 高亮文本樣式 */
+.highlight-yellow {
+  background-color: rgba(253, 224, 71, 0.3);
+}
+
+.highlight-green {
+  background-color: rgba(134, 239, 172, 0.3);
+}
+
+.highlight-blue {
+  background-color: rgba(147, 197, 253, 0.3);
+}
+
+.highlight-pink {
+  background-color: rgba(249, 168, 212, 0.3);
+}
+
+/* 防止拖拽時選中文本 */
+.select-none {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* 側邊欄動畫 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.sidebar-animation {
+  animation: fadeIn 0.2s ease-out;
+  will-change: transform; /* 提高拖拽性能 */
+}
+
+/* 拖拽時的樣式 */
+.dragging {
+  cursor: grabbing !important;
+  opacity: 0.95;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: none !important;
+}
